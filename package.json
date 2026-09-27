@@ -1,0 +1,22 @@
+{
+  "name": "boda-boda-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack boda boda (motorcycle taxi) fleet management and profit analytics platform",
+  "scripts": {
+    "setup": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "migrate": "npm --prefix backend run migrate",
+    "dev": "concurrently -n api,web -c green,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "test": "npm --prefix backend test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

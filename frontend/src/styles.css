@@ -1,0 +1,157 @@
+/* Boda Boda Manager — app styling layered on top of Bootstrap. */
+
+:root {
+  --boda-primary: #1f6f4a;
+  --boda-primary-dark: #175536;
+  --boda-accent: #f2a413;
+  --boda-ink: #16241d;
+  --boda-muted: #6b7a72;
+  --boda-surface: #f6f8f7;
+  --boda-border: #e2e8e5;
+}
+
+body {
+  background-color: var(--boda-surface);
+  color: var(--boda-ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--boda-primary);
+  --bs-btn-border-color: var(--boda-primary);
+  --bs-btn-hover-bg: var(--boda-primary-dark);
+  --bs-btn-hover-border-color: var(--boda-primary-dark);
+  --bs-btn-active-bg: var(--boda-primary-dark);
+  --bs-btn-active-border-color: var(--boda-primary-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--boda-primary);
+  --bs-btn-border-color: var(--boda-primary);
+  --bs-btn-hover-bg: var(--boda-primary);
+  --bs-btn-hover-border-color: var(--boda-primary);
+  --bs-btn-active-bg: var(--boda-primary);
+}
+
+.text-primary { color: var(--boda-primary) !important; }
+.bg-primary { background-color: var(--boda-primary) !important; }
+.progress-bar.bg-primary { background-color: var(--boda-primary) !important; }
+
+/* ---------- Landing ---------- */
+
+.landing {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(31, 111, 74, 0.10), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(242, 164, 19, 0.12), transparent 40%);
+  min-height: 100vh;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--boda-ink);
+  text-decoration: none;
+}
+
+.brand-mark { font-size: 1.5rem; }
+
+/* ---------- Dashboard shell ---------- */
+
+.app-shell { min-height: 100vh; }
+
+.app-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--boda-border);
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: width 0.15s ease;
+}
+
+.app-sidebar.is-collapsed { width: 68px; }
+.app-sidebar.is-collapsed .brand-text { display: none; }
+
+.app-nav { display: flex; flex-direction: column; gap: 0.15rem; flex-grow: 1; }
+
+.app-nav-link {
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--boda-muted);
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.app-nav-link:hover { background-color: var(--boda-surface); color: var(--boda-ink); }
+
+.app-nav-link.is-active {
+  background-color: rgba(31, 111, 74, 0.1);
+  color: var(--boda-primary);
+  font-weight: 600;
+}
+
+.sidebar-toggle {
+  border: 1px solid var(--boda-border);
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  color: var(--boda-muted);
+  font-size: 0.9rem;
+}
+
+.app-main { display: flex; flex-direction: column; min-width: 0; }
+
+.app-topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--boda-border);
+  padding: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.app-content { padding: 1.5rem; }
+
+@media (max-width: 767px) {
+  .app-sidebar { width: 68px; }
+  .app-sidebar .brand-text { display: none; }
+  .app-content { padding: 1rem; }
+}
+
+/* ---------- Stat cards ---------- */
+
+.stat-card { border: 1px solid var(--boda-border); }
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.stat-sub { font-size: 0.8rem; }
+
+/* ---------- Auth ---------- */
+
+.auth-page { min-height: 100vh; }
+.auth-card { max-width: 420px; }
+
+/* ---------- Tables ---------- */
+
+.table thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--boda-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.card-header { font-weight: 600; }
